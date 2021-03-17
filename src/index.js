@@ -2,8 +2,14 @@ const express = require("express")
 
 const app = express()
 
-app.get('/', (request, response) => {
+app.use(express.json())
+
+app.get('/clients', (request, response) => {
     return response.json({ message: "Hello World" })
+})
+
+app.post('/clients', (request, response) => {
+    return response.json({ message: true })
 })
 
 const port = 3333
